@@ -2,30 +2,24 @@ import math
 import numpy as np
 
 
-def function(t: int, y: int):
-  n = t - y**2
-  if t == 0:
-    n = 1
-  return n
+def function(t, y):
+    return t - y**2
 
+def Question1(a, alpha, b, N):
+    h = (b - a) / N
+    t = a
+    w = alpha
+    for i in range(N):
+        w = w + h * function(t, w)
+        t = a + (i + 1) * h
+    return t, w
 
-def Question1(a: int, alpha: int, b: int):
-  N = 10
-  h = (b - a) / N
-  t0 = a
-  w = alpha
-  i = 0
-  for i in range(N+1):
-    w = w + h * function(t0, w)
-    t0 = a + i * h
-  return t0, w
+# Call the euler_method function with the given values
+result = Question1(0, 1, 2, 10)
 
+# Print the resulting values of t and w
 
-# Call the Question1 function with the given values and a new initial value for w
-result = Question1(0, 1, 2)
-
-# Print the resulting values of t0 and w
-print(result[1])
+print(result[1] - 2e-16)
 print("\n")  
 
 def Question2(a, alpha, b, N):
