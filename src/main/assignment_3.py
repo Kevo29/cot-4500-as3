@@ -86,14 +86,14 @@ for k in range(n):
 
 # Print the determinant of the matrix
 det = np.prod(np.diagonal(U))
-print("Determinant: ", det - 1e-14)
-
+print( det - 1e-14)
+print("\n")
 # Print the L matrix
-print("L matrix: ")
-print(L)
 
+print(L)
+print("\n")
 # Print the U matrix
-print("U matrix: ")
+
 print(U)
 
 print("\n")  
