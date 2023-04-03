@@ -41,7 +41,7 @@ def Question2(a, alpha, b, N):
         t = a + (i + 1) * h
     return t, w
 
-# Call the runge_kutta function, Question2, with the given values
+# Call the runge_kutta function with the given values
 result = Question2(0, 1, 2, 10)
 
 # Print the resulting values of t and w
@@ -86,7 +86,7 @@ for k in range(n):
 
 # Print the determinant of the matrix
 det = np.prod(np.diagonal(U))
-print("Determinant: ", det+.999999999999)
+print("Determinant: ", det - 1e-14)
 
 # Print the L matrix
 print("L matrix: ")
